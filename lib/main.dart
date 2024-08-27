@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ifitapp/screens/home_screen.dart';
 import 'package:ifitapp/screens/login_screen.dart';
 import 'package:ifitapp/screens/register_screen.dart';
+import 'package:ifitapp/screens/splash_screen.dart'; // Import the splash screen
 import 'package:ifitapp/services/auth_service.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Colors.green, // Cor do texto do botão
+            backgroundColor: Colors.green,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            foregroundColor: Colors.green, // Cor do texto
+            foregroundColor: Colors.green,
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -46,11 +47,11 @@ class MyApp extends StatelessWidget {
           labelStyle: TextStyle(color: Colors.green),
         ),
       ),
-      home: LoginScreen(authService: _authService),
+      home: const SplashScreen(), // Set SplashScreen as the initial screen
       routes: {
         '/login': (context) => LoginScreen(authService: _authService),
         '/register': (context) => RegisterScreen(authService: _authService),
-        '/home': (context) => HomeScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
