@@ -1,4 +1,4 @@
-# flutter_application_1
+# ifitapp
 
 A new Flutter project.
 
